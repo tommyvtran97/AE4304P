@@ -1,1 +1,1 @@
-# AE4304P
+# AE4304P Stochastics Aerospace Systems
