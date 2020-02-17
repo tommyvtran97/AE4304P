@@ -56,9 +56,8 @@ end
 zeta = zeta(1);
 
 %% STABILITY ANALYSIS EIGENMODES
-disp(' ');
+
 disp('*** Stability Analysis ***');
-disp(' '); 
 
 ac_eig = eig(aircraft);
 acpd_eig = eig(aircraft_pd);
@@ -84,9 +83,8 @@ end
 disp('[Done]');
 
 %% TIME-DOMAIN ANALYSIS
-disp(' ');
+
 disp('*** Time Domain Analysis ***');
-disp(' ');
 
 % TIME AXIS INPUT VECTOR DEFINITION
 dt = 0.05; fs = 1/dt;
@@ -118,9 +116,8 @@ end
 disp('[Done]')
 
 %% ANALYTICAL POWER SPECTRAL DENSTIY USING THE PREVIOUS INPUT DATASET
-disp(' ');
+
 disp('*** Analytical Spectral Analysis ***');
-disp(' ');
 
 % FREQUENCY AXIS
 w = logspace(-2,2,N);
@@ -149,9 +146,8 @@ end
 disp('[Done]');
 
 %% POWER SPECTRAL DENSITY USING FFT METHOD
-disp(' ');
+
 disp('*** FFT Spectral Analysis ***');
-disp(' ');
 
 % FFT ALL SIGNALS
 U_u = dt*fft(y(:,1));         U_c = dt*fft(y_pd(:,1));
@@ -186,9 +182,8 @@ end
 disp('[Done]');
 
 %% POWER SPECTRAL ANALYSIS USING PWELCH
-disp(' ');
+
 disp('*** Pwelch Spectral Analysis ***');
-disp(' ');
 
 % SETTING PWELCH
 fs = 1/dt;
@@ -226,9 +221,7 @@ end
 disp('[Done]');
 
 %% Variance Estimation Analytical Power Spectra
-disp(' ');
 disp('*** Numerical integration of Analytical PSD ***');
-disp(' ');
 
 % COMPUTE VARIANCE THROUGH CRUDE INTEGRATION OF PSD
 var = zeros(1,5);
@@ -260,12 +253,9 @@ disp(['Variance of alpha is: ' num2str(var(2))])
 disp(['Variance of theta is: ' num2str(var(3))])
 disp(['Variance of pitch rate is: ' num2str(var(4))])
 disp(['Variance of load factor is: ' num2str(var(5))])
-disp('[Done]');
 
 %% VARIANCE ESTIMATION FFT POWER SPECTRA
-disp(' ');
 disp('*** Numerical integration of FFT PSD ***');
-disp(' ');
 
 % COMPUTE VARIANCE THROUGH CRUDE INTEGRATION OF PSD
 var = zeros(1,5);
@@ -297,12 +287,9 @@ disp(['Variance of alpha is: ' num2str(var(2))])
 disp(['Variance of theta is: ' num2str(var(3))])
 disp(['Variance of pitch rate is: ' num2str(var(4))])
 disp(['Variance of load factor is: ' num2str(var(5))])
-disp('[Done]');
 
 %% VARIANCE ESTIMATION PWELCH POWER SPECTRA
-disp(' ');
 disp('*** Numerical integration of PWELCH PSD ***');
-disp(' ');
 
 % COMPUTE VARIANCE THROUGH CRUDE INTEGRATION OF PSD
 var = zeros(1,5);
@@ -334,12 +321,9 @@ disp(['Variance of alpha is: ' num2str(var(2))])
 disp(['Variance of theta is: ' num2str(var(3))])
 disp(['Variance of pitch rate is: ' num2str(var(4))])
 disp(['Variance of load factor is: ' num2str(var(5))])
-disp('[Done]');
 
 %% VARIANCE ESTIMATION USING VAR.m
-disp(' ');
-disp('*** VARIANCE ESTIMATION USING Var.m ***');
-disp(' ');
+
 
 clear var;
 var_1 = var(y);
@@ -348,7 +332,7 @@ disp(['Variance of V is: ' num2str(var_1(1))])
 disp(['Variance of alpha is: ' num2str(var_1(2))])
 disp(['Variance of theta is: ' num2str(var_1(3))])
 disp(['Variance of pitch rate is: ' num2str(var_1(4))])
-disp(['Variance of load factor is: ' num2str(var_1(8))])
+disp(['Variance of load factor is: ' num2str(var_1(5))])
 
 clear var;
 var_2 = var(y_pd);
@@ -357,8 +341,7 @@ disp(['Variance of V is: ' num2str(var_2(1))])
 disp(['Variance of alpha is: ' num2str(var_2(2))])
 disp(['Variance of theta is: ' num2str(var_2(3))])
 disp(['Variance of pitch rate is: ' num2str(var_2(4))])
-disp(['Variance of load factor is: ' num2str(var_2(8))])
-disp('[Done]');
+disp(['Variance of load factor is: ' num2str(var_2(5))])
 
 
 disp('Press a key to close all windows')
