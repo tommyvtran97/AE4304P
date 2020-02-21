@@ -1,5 +1,5 @@
 figure(1)
-plot(t,y(:,3));
+plot(t,y(:,3), 'b-');
 hold on
 plot(t_pd,y_pd(:,3));
 title('Step reponse phugoid motion with \Delta\delta_e = -0.005 [rad]')
@@ -13,7 +13,7 @@ saveas(gcf,[pwd,'\Plots\Pitch_response'],'epsc');
 end
 
 figure(2)
-plot(t,y(:,4));
+plot(t,y(:,4), 'b-');
 hold on
 plot(t_pd,y_pd(:,4));
 title('Step reponse phugoid motion with \Delta\delta_e = -0.005 [rad]')
