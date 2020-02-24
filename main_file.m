@@ -105,7 +105,12 @@ u = [nn' nn' w3'];                  % input vector definition (vertical
                                     % turbulence only, can be changed).
                             
 % SIMULATION OF MOTION VARIABLES
-aircraft_ext_pd = ss(A_pd, B, C_ext, D_ext);
+g = 9.80665;
+Nzpd_C = V/g*(aircraft_pd.A(3,:) - aircraft_pd.A(2,:));
+Nzpd_D = [0 0 0];
+Cpd_ext = [C; Nzpd_C];
+Dpd_ext = [D; Nzpd_D];
+aircraft_ext_pd = ss(A_pd, B, Cpd_ext, Dpd_ext);
 
 y = lsim(aircraft_ext, u, t);
 y_pd = lsim(aircraft_ext_pd, u, t);

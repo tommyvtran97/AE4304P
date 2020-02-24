@@ -25,3 +25,31 @@ set(gcf, 'Position',  [0, 0, 1100, 600])
 if save == 'y'
 saveas(gcf,[pwd,'\Plots\PitchRate_response'],'epsc');
 end 
+
+% subplot(121)
+% plot(t,y(:,3), 'b-');
+% hold on
+% plot(t_pd,y_pd(:,3));
+% legend('Pitch Damper OFF', 'Pitch Damper ON');
+% ylabel('\theta [rad]')
+% xlabel('time [s]')
+% grid on
+% set(gcf, 'Position',  [0, 0, 1500, 500])
+% set(gca,'FontSize',20)
+% if save == 'y'
+% saveas(gcf,[pwd,'\Plots\Pitch_response'],'epsc');
+% end
+% 
+% subplot(122)
+% plot(t,y(:,4), 'b-');
+% hold on
+% plot(t_pd,y_pd(:,4));
+% legend('Pitch Damper OFF', 'Pitch Damper ON');
+% ylabel('q [rad/s]')
+% xlabel('time [s]')
+% grid on
+% set(gcf, 'Position',  [0, 0, 1500, 500])
+% set(gca,'FontSize',20)
+% if save == 'y'
+% saveas(gcf,[pwd,'\Plots\PitchRate_response'],'epsc');
+% end 
