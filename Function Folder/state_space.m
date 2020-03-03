@@ -100,7 +100,7 @@ function [aircraft, aircraft_ext, A, B, C, C_ext, D, D_ext, V] = state_space(sig
     %% CREATE EXTENDED STATE SPACE REPRESENTATION WITH LOAD FACTOR
     g = 9.80665;
     Nz_C = V/g*(aircraft.A(3,:) - aircraft.A(2,:));
-    Nz_D = [0 0 0];
+    Nz_D = V/g*(aircraft.B(3,:) - aircraft.B(2,:));
     C_ext = [C; Nz_C];
     D_ext = [D; Nz_D];
     aircraft_ext = ss(A,B, C_ext, D_ext);

@@ -40,6 +40,9 @@ Lg = 1500;
 u = [de(:),w1(:),w3(:)];
 [y,t] = lsim(aircraft,u,t);
 
+% DETERMINE THE CONTROLLABILITY MATRIX AND VERIFY FULL RANK
+control = length(A) - rank(ctrb(A,B));
+
 % DERIVE GAIN FOR THETA TO OBTAIN DAMPING RATIO 0.5
 Kt = -0.13035;
 K = [0 0 Kt 0 0 0 0];
@@ -97,9 +100,9 @@ rng('default');
 rng(1);
 wn = 1;                             % White noise intensity 1
 nn = zeros(1,N);                    % zero input elevator             
-w1 = sqrt(wn)*randn(1,N)/sqrt(dt);  % scaled input hor. turbulence,
+w1 = randn(1,N)/sqrt(dt);           % scaled input hor. turbulence,
                                     % note the sqrt(dt) because of lsim
-w3 = sqrt(wn)*randn(1,N)/sqrt(dt);  % scaled input vert. turbulence,
+w3 = randn(1,N)/sqrt(dt);           % scaled input vert. turbulence,
                                     % note the sqrt(dt) because of lsim
 u = [nn' nn' w3'];                  % input vector definition (vertical
                                     % turbulence only, can be changed).
@@ -107,7 +110,7 @@ u = [nn' nn' w3'];                  % input vector definition (vertical
 % SIMULATION OF MOTION VARIABLES
 g = 9.80665;
 Nzpd_C = V/g*(aircraft_pd.A(3,:) - aircraft_pd.A(2,:));
-Nzpd_D = [0 0 0];
+Nzpd_D = V/g*(aircraft.B(3,:) - aircraft.B(2,:));
 Cpd_ext = [C; Nzpd_C];
 Dpd_ext = [D; Nzpd_D];
 aircraft_ext_pd = ss(A_pd, B, Cpd_ext, Dpd_ext);
@@ -290,7 +293,7 @@ disp(['Variance of load factor is: ' num2str(var(5))])
 
 var = zeros(1,5);
 for j = 1:5
-    for i=1:2000-1
+    for i=1:size(omega,2)-1
         var(j) = var(j) + (omega(i+1)-omega(i))*Sfft_c(i,j);
     end
 end
@@ -312,7 +315,7 @@ disp(' ');
 % COMPUTE VARIANCE THROUGH CRUDE INTEGRATION OF PSD
 var = zeros(1,5);
 for j = 1:5
-    for i=1:1999-1
+    for i=1:size(w_p,1)-1
         var(j) = var(j) + (w_p(i+1)-w_p(i))*Spw_u(i,j);
     end
 end
@@ -364,7 +367,6 @@ disp(['Variance of theta is: ' num2str(var_2(3))])
 disp(['Variance of pitch rate is: ' num2str(var_2(4))])
 disp(['Variance of load factor is: ' num2str(var_2(8))])
 disp('[Done]');
-
 
 disp('Press a key to close all windows')
 pause
