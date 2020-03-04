@@ -142,7 +142,7 @@ title('Power spectral density with pitch damper','FontSize', 14);
 grid on
 set(gcf, 'Position',  [0, 0, 1500, 1500])
 if save == 'y'
-saveas(gcf,[pwd,'\Plots\psd_all1'],'epsc');
+saveas(gcf,[pwd,'\Plots\psd_all_Saa'],'epsc');
 end
 
 figure(8)
@@ -164,6 +164,9 @@ ylabel('$S_{\theta\theta}$ [$\frac{rad^2}{rad/s}$]','interpreter','latex','FontS
 title('Power spectral density with pitch damper','FontSize', 14);
 grid on
 set(gcf, 'Position',  [0, 0, 1500, 1500])
+if save == 'y'
+saveas(gcf,[pwd,'\Plots\psd_all1'],'epsc');
+end
 
 subplot(222)
 loglog(omega, Sfft_u(:,4),w_p, Spw_u(:,4), w, Sana_u(:,4),'linewidth',1);

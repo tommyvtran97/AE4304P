@@ -162,18 +162,18 @@ disp('*** FFT Spectral Analysis ***');
 disp(' ');
 
 % FFT ALL SIGNALS
-U_u = dt*fft(y(:,1));         U_c = dt*fft(y_pd(:,1));
-ALPHA_u = dt*fft(y(:,2));     ALPHA_c = dt*fft(y_pd(:,2));
-THETA_u = dt*fft(y(:,3));     THETA_c = dt*fft(y_pd(:,3));
-QCV_u = dt*fft(y(:,4));       QCV_c = dt*fft(y_pd(:,4));
-NZ_u = dt*fft(y(:,8));        NZ_c = dt*fft(y_pd(:,8));
+U_u = fft(y(:,1));         U_c = fft(y_pd(:,1));
+ALPHA_u = fft(y(:,2));     ALPHA_c = fft(y_pd(:,2));
+THETA_u = fft(y(:,3));     THETA_c = fft(y_pd(:,3));
+QCV_u = fft(y(:,4));       QCV_c = fft(y_pd(:,4));
+NZ_u = fft(y(:,8));        NZ_c = fft(y_pd(:,8));
 
 % COMPUTE PSD
-Pu_u = real((1/T)*      U_u.*conj(U_u));            Pu_c = real((1/T)*      U_c.*conj(U_c));
-Palpha_u = real((1/T)*  ALPHA_u.*conj(ALPHA_u));    Palpha_c = real((1/T)*  ALPHA_c.*conj(ALPHA_c));
-Ptheta_u = real((1/T)*  THETA_u.*conj(THETA_u));    Ptheta_c = real((1/T)*  THETA_c.*conj(THETA_c));
-PqcV_u = real((1/T)*    QCV_u.*conj(QCV_u));        PqcV_c = real((1/T)*    QCV_c.*conj(QCV_c));
-Pnz_u = real((1/T)*     NZ_u.*conj(NZ_u));          Pnz_c = real((1/T)*     NZ_c.*conj(NZ_c));
+Pu_u = dt*real((1/N)*      U_u.*conj(U_u));            Pu_c = dt*real((1/N)*      U_c.*conj(U_c));
+Palpha_u = dt*real((1/N)*  ALPHA_u.*conj(ALPHA_u));    Palpha_c = dt*real((1/N)*  ALPHA_c.*conj(ALPHA_c));
+Ptheta_u = dt*real((1/N)*  THETA_u.*conj(THETA_u));    Ptheta_c = dt*real((1/N)*  THETA_c.*conj(THETA_c));
+PqcV_u = dt*real((1/N)*    QCV_u.*conj(QCV_u));        PqcV_c = dt*real((1/N)*    QCV_c.*conj(QCV_c));
+Pnz_u = dt*real((1/N)*     NZ_u.*conj(NZ_u));          Pnz_c = dt*real((1/N)*     NZ_c.*conj(NZ_c));
 
 Pu_u = Pu_u(1:round(N/2)-1);           Pu_c = Pu_c(1:round(N/2)-1);
 Palpha_u = Palpha_u(1:round(N/2)-1);   Palpha_c = Palpha_c(1:round(N/2)-1);    
