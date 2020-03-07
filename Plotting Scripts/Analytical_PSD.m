@@ -69,7 +69,7 @@ loglog(w, Sana_u(:,1), 'b-', w, Sana_c(:,1), '-', 'linewidth',1)
 axis(10.^[-2,2,-15,0])
 set(gca,'FontSize',18)
 xlabel('$\omega$ [$\frac{rad}{s}$]','interpreter','latex', 'FontSize', 25); 
-ylabel('$S_{uu}$ [$\frac{rad^2}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
+ylabel('$S_{\hat{u}\hat{u}}$ [$\frac{1}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
 %title('Analytical power spectral density');
 legend('Pitch Damper OFF', 'Pitch Damper ON');
 grid on
@@ -102,7 +102,7 @@ loglog(w, Sana_u(:,4), 'b-', w, Sana_c(:,4), '-', 'linewidth',1)
 axis(10.^[-2,2,-15,0])
 set(gca,'FontSize',18)
 xlabel('$\omega$ [$\frac{rad}{s}$]','interpreter','latex', 'FontSize', 25); 
-ylabel('$S_{qq}$ [$\frac{rad^2}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
+ylabel('$S_{\frac{q\bar{c}}{V}\frac{q\bar{c}}{V}}$ [$\frac{rad^2}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
 %title('Analytical power spectral density');
 %legend('Pitch Damper OFF', 'Pitch Damper ON','FontSize', 15);
 grid on
@@ -113,7 +113,7 @@ loglog(w, Sana_u(:,5), 'b-', w, Sana_c(:,5), '-', 'linewidth',1)
 axis(10.^[-2,2,-15,0])
 set(gca,'FontSize',18)
 xlabel('$\omega$ [$\frac{rad}{s}$]','interpreter','latex', 'FontSize', 25);
-ylabel('$S_{n_zn_z}$ [$\frac{rad^2}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
+ylabel('$S_{n_zn_z}$ [$\frac{1}{rad/s}$]','interpreter','latex', 'FontSize', 25); 
 %title('Analytical power spectral density');
 %legend('Pitch Damper OFF', 'Pitch Damper ON','FontSize', 15);
 grid on

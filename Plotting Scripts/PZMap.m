@@ -30,8 +30,8 @@ ylabel('Imaginary Axis (seconds^{-1})')
 xlim([-2,1])
 ylim([-1.5,1.5])
 set(gca,'FontSize',15)
+grid on
 if save == 'y'
 saveas(gcf,[pwd,'\Plots\pzmap'],'epsc');
 end 
-grid on
 
