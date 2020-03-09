@@ -1,4 +1,4 @@
-# AE4304P Stochastics Aerospace Systems
+# AE4304P: Stochastic Aerospace System Practical
 
 
 Calculations on the symmetrical aircraft response for a rigid aircraft in symmetrical atmospheric turbulence conditions with an autopilot (pitch-damper) both on and off.
