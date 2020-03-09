@@ -1,7 +1,7 @@
 %===================================================================
 %       This script contains the main code that
 %       has been used in order to generate certain
-%       plots that are related to the assignment AE4304P
+%       plots that are relevant to the assignment AE4304P
 % 
 % Written by: Tommy Tran (4449142)
 %===================================================================
