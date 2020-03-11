@@ -93,7 +93,7 @@ disp(' ');
 
 % TIME AXIS INPUT VECTOR DEFINITION
 dt = 0.05; fs = 1/dt;
-T = 200; t = [0:dt:T]; N = length(t);
+T = 5000; t = [0:dt:T-dt]; N = length(t);
 
 % INPUT VECTOR DEFINITION
 rng('default');
@@ -185,7 +185,7 @@ Sfft_u = [Pu_u, Palpha_u, Ptheta_u, PqcV_u, Pnz_u];
 Sfft_c = [Pu_c, Palpha_c, Ptheta_c, PqcV_c, Pnz_c];
 
 % DEFINE FREQUENCY VECTOR FOR PLOTTING
-omega = 2*pi*fs*(0:(N/2)-1)/N;
+omega = 2*pi*fs*(1:(N/2)-1)/N;
 
 if fft_plots == 'y'
     FFT_PSD;
