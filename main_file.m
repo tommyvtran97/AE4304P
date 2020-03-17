@@ -92,8 +92,8 @@ disp('*** Time Domain Analysis ***');
 disp(' ');
 
 % TIME AXIS INPUT VECTOR DEFINITION
-dt = 0.05; fs = 1/dt;
-T = 5000; t = [0:dt:T-dt]; N = length(t);
+dt = 0.05; fs = 1/dt;                     % dt can be changed accordingly
+T = 200; t = [0:dt:T-dt]; N = length(t);  % T  can be changed accordingly
 
 % INPUT VECTOR DEFINITION
 rng('default');
