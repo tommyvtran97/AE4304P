@@ -105,8 +105,8 @@ w1 = randn(1,N)/sqrt(dt);           % scaled input hor. turbulence,
 w3 = randn(1,N)/sqrt(dt);           % scaled input vert. turbulence,
                                     % note the sqrt(dt) because of lsim
 u = [nn' nn' w3'];                  % input vector definition (vertical
-                                    % turbulence only, can be changed).
-                            
+                                    % turbulence only, can be changed)
+           
 % SIMULATION OF MOTION VARIABLES
 g = 9.80665;
 Nzpd_C = V/g*(aircraft_pd.A(3,:) - aircraft_pd.A(2,:));
