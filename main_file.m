@@ -11,7 +11,8 @@ clear;
 addpath 'Function Folder';
 addpath 'Plotting Scripts';
 
-save = input('Save all images (Y/N): ','s');
+%save = input('Save all images (Y/N): ','s');
+save = 'N';
 all_plots = input('Show all Plots (Y/N): ', 's');
 if all_plots == 'n'
     stability_plots = input('Show stability analysis (Y/N): ', 's');
